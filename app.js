@@ -19,3 +19,15 @@ app.listen(PORT, (error) => {
 
     console.log(`My first Express app - listening on port ${PORT}`);
 });
+
+app.use((req, res, next) => {
+    throw new Error("OH NO!");
+    // or next(new Error("OH NO!"));
+});
+
+// Every thrown error in the application or the previous middleware functions 
+// calling `next` with an error as an argument will eventually go to this middleware function
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send(err);
+});
