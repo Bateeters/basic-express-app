@@ -3,10 +3,23 @@ const app = express();
 const authorRouter = require("./routes/authorRouter");
 const bookRouter = require("./routes/bookRouter");
 const indexRouter = require("./routes/indexRouter");
+const path = require("node:path");
 
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+/*
+=========================================
+Commented out to enable EJS views/routing
+=========================================
 app.use("/authors", authorRouter);
 app.use("/books", bookRouter);
 app.use("/", indexRouter);
+*/
+
+app.get("/", (req, res) => {
+    res.render("index", { message: "EJS Rocks!"});
+});
 
 const PORT = 3000;
 app.listen(PORT, (error) => {
