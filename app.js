@@ -17,8 +17,13 @@ app.use("/books", bookRouter);
 app.use("/", indexRouter);
 */
 
+const links = [
+    { href: "/", text: "Home" },
+    { href: "about", text: "About" },
+]
+
 app.get("/", (req, res) => {
-    res.render("index", { message: "EJS Rocks!"});
+    res.render("index", {links: links});
 });
 
 const PORT = 3000;
