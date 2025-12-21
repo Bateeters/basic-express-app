@@ -1,0 +1,15 @@
+body {
+    background-color: midnightblue;
+    color: pink;
+}
+
+a {
+    color: white;
+}
+
+footer div {
+    background-color: black;
+    padding: 10px 20px;
+    text-align: center;
+}
+
