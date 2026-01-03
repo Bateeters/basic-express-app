@@ -11,6 +11,15 @@
                 <%- include('users/user', {user: user}); %>
             <% }) %>
         </ul>
+        <br>
+        <br>
+        <h3>Basic form</h3>
+        <form action="/create" method="POST">
+            <label for="fullName">Full Name:</label>
+            <input placeholder="John Doe" type="text" name="fullName" id="fullName">
+            <button type="submit">Submit</button>
+        </form>
+
     </body>
     <%- include('footer') %>
 </html>
